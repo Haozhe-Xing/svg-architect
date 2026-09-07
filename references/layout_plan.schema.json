@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SVG Layout Plan Schema v5",
+  "description": "放宽约束并增强数值化的 70/30 构图计划",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "viewBox": { 
+          "type": "string", 
+          "pattern": "^-?\\d+(\\.\\d+)? -?\\d+(\\.\\d+)? \\d+(\\.\\d+)? \\d+(\\.\\d+)?$",
+          "description": "支持负起点的标准 viewBox 格式" 
+        },
+        "aspect_ratio": { "type": "string", "enum": ["16:9", "4:3", "1:1"] },
+        "safe_area": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "width": { "type": "number" },
+            "height": { "type": "number" }
+          },
+          "required": ["x", "y", "width", "height"]
+        }
+      },
+      "required": ["viewBox", "safe_area"]
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "theme": { "type": "string", "enum": ["tech_dark", "minimal_clean", "glass_premium", "neubrutalism", "bento_info", "clay_soft"] },
+        "platform": { "type": "string" },
+        "language": { "type": "string", "enum": ["zh", "en", "mixed"] }
+      },
+      "required": ["theme", "platform"]
+    },
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "slot_id": { "type": "string", "enum": ["background", "title_area", "info_area", "brand_mark"] },
+          "rect": {
+            "type": "object",
+            "properties": {
+              "x": { "type": "number" },
+              "y": { "type": "number" },
+              "w": { "type": "number" },
+              "h": { "type": "number" }
+            },
+            "required": ["x", "y", "w", "h"]
+          },
+          "content_type": { "type": "string" }
+        },
+        "required": ["slot_id", "rect"]
+      }
+    },
+    "creative_zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowed_area": { "type": "string" },
+        "visual_language": { "type": "string" },
+        "focal_point": { "type": "string" }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "background": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "primary": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "text": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+      },
+      "required": ["background", "primary", "text"]
+    }
+  },
+  "required": ["canvas", "metadata", "slots", "creative_zone", "palette"]
+}

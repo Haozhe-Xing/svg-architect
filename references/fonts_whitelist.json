@@ -1,0 +1,37 @@
+[
+  {
+    "family": "PingFang SC",
+    "weight": ["400", "600", "700", "800", "900"],
+    "usage": "Chinese primary — macOS/iOS only, always pair with cross-platform fallbacks"
+  },
+  {
+    "family": "Noto Sans SC",
+    "weight": ["400", "500", "700"],
+    "usage": "Chinese cross-platform fallback — covers Windows/Linux/Android"
+  },
+  {
+    "family": "Microsoft YaHei",
+    "weight": ["400", "700"],
+    "usage": "Chinese Windows fallback"
+  },
+  {
+    "family": "Inter",
+    "weight": ["400", "600", "800"],
+    "usage": "English/Latin display text (tech_dark, glass_premium)"
+  },
+  {
+    "family": "SF Pro Display",
+    "weight": ["400", "700", "800"],
+    "usage": "Apple-style English heading (minimal_clean)"
+  },
+  {
+    "family": "JetBrains Mono",
+    "weight": ["400", "700"],
+    "usage": "Code snippets and monospace labels"
+  },
+  {
+    "family": "Roboto",
+    "weight": ["400", "700"],
+    "usage": "Generic tech fallback"
+  }
+]
