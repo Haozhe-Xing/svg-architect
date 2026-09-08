@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="480" viewBox="0 0 680 480" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="svga-cmp-title svga-cmp-desc" font-family="Segoe UI, PingFang SC, Noto Sans SC, Microsoft YaHei, system-ui, sans-serif">
+  <title id="svga-cmp-title">平台与字号基准</title>
+  <desc id="svga-cmp-desc">三种输出平台对比：公众号封面、文章图、文档插图，包含宽高与字号下限对比。</desc>
+
+  <rect x="0" y="0" width="680" height="480" fill="#F8FAFC"/>
+
+  <!-- 标题块 -->
+  <text x="24" y="42" font-size="17" font-weight="700" fill="#1E293B">平台与字号基准</text>
+  <text x="24" y="62" font-size="12" font-weight="400" fill="#475569">三种输出平台：公众号封面 / 文章图 / 文档插图</text>
+
+  <!-- 结论先行 -->
+  <rect x="24" y="76" width="3" height="20" rx="1" fill="#2563EB"/>
+  <text x="35" y="91" font-size="13" font-weight="400" fill="#1E293B">文档插图走 doc_figure：680px 固定宽、12px 字号下限</text>
+
+  <!-- 图例 -->
+  <rect x="556" y="30" width="10" height="10" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+  <text x="570" y="40" font-size="12" fill="#475569">新增</text>
+  <rect x="607" y="30" width="10" height="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="621" y="40" font-size="12" fill="#475569">公众号</text>
+
+  <!-- 对比表格 -->
+  <rect x="24" y="112" width="632" height="28" fill="#F1F5F9"/>
+  <rect x="24" y="196" width="632" height="28" fill="#ECFDF5"/>
+
+  <!-- 表头 -->
+  <text x="36" y="131" font-size="12" font-weight="600" fill="#1E293B">平台</text>
+  <text x="206" y="131" font-size="12" font-weight="600" fill="#1E293B">宽 × 高</text>
+  <text x="406" y="131" font-size="12" font-weight="600" fill="#1E293B">字号下限</text>
+
+  <!-- 行 1 -->
+  <text x="36" y="158" font-size="12" fill="#1E293B">wechat_cover</text>
+  <text x="206" y="158" font-size="12" fill="#475569">1800 × 766</text>
+  <text x="406" y="158" font-size="12" fill="#1E293B">18px</text>
+
+  <!-- 行 2 -->
+  <text x="36" y="186" font-size="12" fill="#1E293B">wechat_article</text>
+  <text x="206" y="186" font-size="12" fill="#475569">1200 × 500</text>
+  <text x="406" y="186" font-size="12" fill="#1E293B">16px</text>
+
+  <!-- 行 3（新增） -->
+  <text x="36" y="214" font-size="12" font-weight="600" fill="#065F46">doc_figure</text>
+  <text x="104" y="214" font-size="12" font-weight="600" fill="#065F46">新增</text>
+  <text x="206" y="214" font-size="12" fill="#475569">680 × (400–1000)</text>
+  <text x="406" y="214" font-size="12" fill="#065F46">12px</text>
+
+  <!-- 表格边框与分隔线 -->
+  <rect x="24" y="112" width="632" height="112" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="24" y1="140" x2="656" y2="140" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="24" y1="168" x2="656" y2="168" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="24" y1="196" x2="656" y2="196" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="194" y1="112" x2="194" y2="224" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="394" y1="112" x2="394" y2="224" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- 数据条：平台宽度 -->
+  <text x="24" y="252" font-size="14" font-weight="600" fill="#1E293B">平台宽度对比（px）</text>
+
+  <text x="24" y="283" font-size="12" fill="#475569">wechat_cover</text>
+  <rect x="144" y="272" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="272" width="400" height="12" rx="3" fill="#2563EB"/>
+  <text x="552" y="283" font-size="12" fill="#1E293B">1800</text>
+
+  <text x="24" y="307" font-size="12" fill="#475569">wechat_article</text>
+  <rect x="144" y="296" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="296" width="267" height="12" rx="3" fill="#60A5FA"/>
+  <text x="552" y="307" font-size="12" fill="#1E293B">1200</text>
+
+  <text x="24" y="331" font-size="12" fill="#475569">doc_figure</text>
+  <rect x="144" y="320" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="320" width="151" height="12" rx="3" fill="#059669"/>
+  <text x="552" y="331" font-size="12" fill="#065F46">680</text>
+
+  <!-- 数据条：字号下限 -->
+  <text x="24" y="369" font-size="14" font-weight="600" fill="#1E293B">字号下限（px）</text>
+
+  <text x="24" y="399" font-size="12" fill="#475569">wechat_cover</text>
+  <rect x="144" y="388" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="388" width="400" height="12" rx="3" fill="#2563EB"/>
+  <text x="552" y="399" font-size="12" fill="#1E293B">18px</text>
+
+  <text x="24" y="423" font-size="12" fill="#475569">wechat_article</text>
+  <rect x="144" y="412" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="412" width="356" height="12" rx="3" fill="#60A5FA"/>
+  <text x="552" y="423" font-size="12" fill="#1E293B">16px</text>
+
+  <text x="24" y="447" font-size="12" fill="#475569">doc_figure</text>
+  <rect x="144" y="436" width="400" height="12" rx="3" fill="#E2E8F0"/>
+  <rect x="144" y="436" width="267" height="12" rx="3" fill="#059669"/>
+  <text x="552" y="447" font-size="12" fill="#065F46">12px</text>
+
+  <!-- 脚注 -->
+  <text x="24" y="470" font-size="12" fill="#64748B">* doc_figure 以 100% 原尺寸嵌入页面，12px 为屏幕阅读绝对下限</text>
+</svg>

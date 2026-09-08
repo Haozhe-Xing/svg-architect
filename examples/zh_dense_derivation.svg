@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="420" viewBox="0 0 680 420" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="svga-deriv-title svga-deriv-desc" font-family="Segoe UI, PingFang SC, Noto Sans SC, Microsoft YaHei, system-ui, sans-serif">
+  <title id="svga-deriv-title">对比度校验原理</title>
+  <desc id="svga-deriv-desc">doc_figure 平台对比度校验算法原理：从文字颜色提取、相对亮度计算到 4.5:1 判定与拦截。</desc>
+  <defs>
+    <marker id="svga-deriv-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563EB"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="680" height="420" fill="#F8FAFC"/>
+
+  <!-- 标题块 -->
+  <text x="24" y="42" font-size="17" font-weight="700" fill="#1E293B">对比度校验原理</text>
+  <text x="24" y="62" font-size="12" fill="#475569">doc_figure 平台如何判定文字可读性</text>
+
+  <!-- 结论先行 -->
+  <rect x="24" y="72" width="3" height="20" rx="1" fill="#2563EB"/>
+  <text x="35" y="87" font-size="13" fill="#1E293B">对比度 &lt; 4.5:1 时触发 E_CONTRAST_LOW，进入修复流程</text>
+
+  <!-- 图例 -->
+  <rect x="420" y="30" width="10" height="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="434" y="40" font-size="12" fill="#475569">流程主线</text>
+  <rect x="492" y="30" width="10" height="10" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+  <text x="506" y="40" font-size="12" fill="#475569">通过</text>
+  <rect x="552" y="30" width="10" height="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+  <text x="566" y="40" font-size="12" fill="#475569">拦截</text>
+
+  <!-- 公式框 -->
+  <rect x="24" y="104" width="632" height="52" rx="4" fill="#FFF8E1" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="340" y="136" font-size="13" fill="#92400E" text-anchor="middle">contrast = ( L1 + 0.05 ) / ( L2 + 0.05 )  ≥  4.5 : 1</text>
+
+  <!-- 节点1 -->
+  <rect x="24" y="180" width="140" height="76" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="40" cy="196" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="40" y="200" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">1</text>
+  <text x="36" y="220" font-size="14" font-weight="600" fill="#1E293B">提取文字颜色</text>
+  <text x="36" y="238" font-size="12" fill="#475569">读取 fill 属性</text>
+
+  <!-- 节点2 -->
+  <rect x="176" y="180" width="140" height="76" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="192" cy="196" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="192" y="200" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">2</text>
+  <text x="188" y="220" font-size="14" font-weight="600" fill="#1E293B">计算相对亮度</text>
+  <text x="188" y="238" font-size="12" fill="#475569">RGB → 线性亮度</text>
+
+  <!-- 节点3 -->
+  <rect x="328" y="180" width="140" height="76" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="344" cy="196" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="344" y="200" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">3</text>
+  <text x="340" y="220" font-size="14" font-weight="600" fill="#1E293B">计算对比度</text>
+  <text x="340" y="238" font-size="12" fill="#475569">代入比值公式</text>
+
+  <!-- 节点4 -->
+  <rect x="480" y="180" width="140" height="76" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="496" cy="196" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="496" y="200" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">4</text>
+  <text x="492" y="218" font-size="14" font-weight="600" fill="#1E293B">判定</text>
+  <text x="492" y="236" font-size="12" fill="#065F46">≥ 4.5 → 通过</text>
+  <text x="492" y="252" font-size="12" fill="#991B1B">&lt; 4.5 → 拦截</text>
+
+  <!-- 箭头 -->
+  <line x1="164" y1="218" x2="174" y2="218" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-deriv-arrow)"/>
+  <line x1="316" y1="218" x2="326" y2="218" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-deriv-arrow)"/>
+  <line x1="468" y1="218" x2="478" y2="218" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-deriv-arrow)"/>
+
+  <!-- 对比表 -->
+  <text x="24" y="288" font-size="14" font-weight="600" fill="#1E293B">白字为何会被拦截</text>
+
+  <rect x="24" y="300" width="632" height="24" fill="#F1F5F9"/>
+  <text x="36" y="316" font-size="12" font-weight="600" fill="#1E293B">场景</text>
+  <text x="196" y="316" font-size="12" font-weight="600" fill="#1E293B">错误（白字）</text>
+  <text x="436" y="316" font-size="12" font-weight="600" fill="#1E293B">正确（深色）</text>
+
+  <text x="36" y="344" font-size="12" fill="#1E293B">白色画布上</text>
+  <text x="196" y="344" font-size="12" fill="#991B1B">#FFFFFF ✕</text>
+  <text x="436" y="344" font-size="12" fill="#065F46">#1E293B ✓</text>
+
+  <text x="36" y="368" font-size="12" fill="#1E293B">绿色色块上</text>
+  <text x="196" y="368" font-size="12" fill="#991B1B">#FFFFFF ✕</text>
+  <text x="436" y="368" font-size="12" fill="#065F46">#065F46 ✓</text>
+
+  <rect x="24" y="300" width="632" height="72" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="24" y1="324" x2="656" y2="324" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="24" y1="348" x2="656" y2="348" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="184" y1="300" x2="184" y2="372" stroke="#E2E8F0" stroke-width="1"/>
+  <line x1="424" y1="300" x2="424" y2="372" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- 脚注 -->
+  <text x="24" y="400" font-size="12" fill="#64748B">* 对比度按画布底色 #F8FAFC 计算，浅色文字一律判 E_CONTRAST_LOW</text>
+</svg>

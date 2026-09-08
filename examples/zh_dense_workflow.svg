@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="400" viewBox="0 0 680 400" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="svga-flow-title svga-flow-desc" font-family="Segoe UI, PingFang SC, Noto Sans SC, Microsoft YaHei, system-ui, sans-serif">
+  <title id="svga-flow-title">SVG Architect 生成流程</title>
+  <desc id="svga-flow-desc">从需求到可交付 SVG 的六阶段流水线：识别类型、选择风格、规划布局、生成 SVG、校验修复、交付。</desc>
+  <defs>
+    <marker id="svga-flow-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563EB"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="680" height="400" fill="#F8FAFC"/>
+
+  <!-- 标题块 -->
+  <text x="24" y="42" font-size="17" font-weight="700" fill="#1E293B">SVG Architect 生成流程</text>
+  <text x="24" y="62" font-size="12" font-weight="400" fill="#475569">从需求到可交付 SVG 的六阶段流水线</text>
+
+  <!-- 结论先行 -->
+  <rect x="24" y="76" width="3" height="20" rx="1" fill="#2563EB"/>
+  <text x="35" y="91" font-size="13" font-weight="400" fill="#1E293B">一条需求 → 六阶段流水线 → 一张校验通过的 SVG</text>
+
+  <!-- 图例 -->
+  <rect x="445" y="30" width="10" height="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="459" y="40" font-size="12" fill="#475569">流程主线</text>
+  <rect x="506" y="30" width="10" height="10" fill="#D1FAE5" stroke="#059669" stroke-width="1"/>
+  <text x="520" y="40" font-size="12" fill="#475569">自动修复</text>
+  <rect x="567" y="30" width="10" height="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1"/>
+  <text x="581" y="40" font-size="12" fill="#475569">人工审核</text>
+
+  <!-- 节点 1 -->
+  <rect x="24" y="112" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="40" cy="128" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="40" y="132" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">1</text>
+  <text x="36" y="152" font-size="14" font-weight="600" fill="#1E293B">识别类型</text>
+  <text x="36" y="170" font-size="12" fill="#475569">wechat · doc_figure</text>
+
+  <!-- 节点 2 -->
+  <rect x="232" y="112" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="248" cy="128" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="248" y="132" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">2</text>
+  <text x="244" y="152" font-size="14" font-weight="600" fill="#1E293B">选择风格</text>
+  <text x="244" y="170" font-size="12" fill="#475569">七种风格匹配</text>
+
+  <!-- 节点 3 -->
+  <rect x="440" y="112" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="456" cy="128" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="456" y="132" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">3</text>
+  <text x="452" y="152" font-size="14" font-weight="600" fill="#1E293B">规划布局</text>
+  <text x="452" y="170" font-size="12" fill="#475569">生成 layout.json</text>
+
+  <!-- 节点 4 -->
+  <rect x="440" y="208" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="456" cy="224" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="456" y="228" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">4</text>
+  <text x="452" y="248" font-size="14" font-weight="600" fill="#1E293B">生成 SVG</text>
+  <text x="452" y="266" font-size="12" fill="#475569">完整文件 + svga- 前缀</text>
+
+  <!-- 节点 5 -->
+  <rect x="232" y="208" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="248" cy="224" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="248" y="228" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">5</text>
+  <text x="244" y="248" font-size="14" font-weight="600" fill="#1E293B">校验修复</text>
+  <text x="244" y="266" font-size="12" fill="#475569">validator + fixer</text>
+
+  <!-- 节点 6 -->
+  <rect x="24" y="208" width="196" height="80" rx="6" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="40" cy="224" r="9" fill="#DBEAFE" stroke="#2563EB" stroke-width="1"/>
+  <text x="40" y="228" font-size="12" font-weight="600" fill="#1E3A8A" text-anchor="middle">6</text>
+  <text x="36" y="248" font-size="14" font-weight="600" fill="#1E293B">交付</text>
+  <text x="36" y="266" font-size="12" fill="#475569">路径 + PASS 摘要</text>
+
+  <!-- 箭头 -->
+  <line x1="220" y1="152" x2="230" y2="152" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-flow-arrow)"/>
+  <line x1="428" y1="152" x2="438" y2="152" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-flow-arrow)"/>
+  <line x1="538" y1="192" x2="538" y2="206" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-flow-arrow)"/>
+  <line x1="438" y1="248" x2="430" y2="248" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-flow-arrow)"/>
+  <line x1="230" y1="248" x2="222" y2="248" stroke="#2563EB" stroke-width="1.5" marker-end="url(#svga-flow-arrow)"/>
+
+  <!-- 底部摘要条 -->
+  <rect x="24" y="304" width="632" height="56" rx="6" fill="#DBEAFE"/>
+  <text x="36" y="324" font-size="13" font-weight="600" fill="#1E3A8A">六阶段环环相扣</text>
+  <text x="36" y="344" font-size="12" fill="#1E3A8A">识别 → 风格 → 布局 → 生成 → 校验 → 交付</text>
+
+  <!-- 脚注 -->
+  <text x="24" y="388" font-size="12" fill="#64748B">* doc_figure 平台 680px 宽、12px 字号下限；对比度按画布底色 #F8FAFC 计算</text>
+</svg>

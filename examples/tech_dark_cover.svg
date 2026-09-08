@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="766" viewBox="0 0 1800 766" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="svga-cover-title svga-cover-desc" font-family="PingFang SC, Noto Sans SC, Microsoft YaHei, system-ui, sans-serif">
+  <title id="svga-cover-title">SVG Architect</title>
+  <desc id="svga-cover-desc">SVG Architect 技能封面：纯代码生成微信公众号视觉与文档插图。</desc>
+  <defs>
+    <pattern id="svga-cover-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="1"/>
+    </pattern>
+    <filter id="svga-cover-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1800" height="766" fill="#0A0A0B"/>
+  <rect x="0" y="0" width="1800" height="766" fill="url(#svga-cover-grid)" opacity="0.3"/>
+
+  <!-- 光晕 -->
+  <circle cx="900" cy="300" r="200" fill="#3B82F6" opacity="0.35" filter="url(#svga-cover-glow)"/>
+  <circle cx="650" cy="520" r="160" fill="#8B5CF6" opacity="0.25" filter="url(#svga-cover-glow)"/>
+  <circle cx="1150" cy="520" r="160" fill="#8B5CF6" opacity="0.25" filter="url(#svga-cover-glow)"/>
+
+  <!-- 强调线 -->
+  <rect x="850" y="240" width="100" height="6" rx="3" fill="#3B82F6"/>
+
+  <!-- 主标题 -->
+  <text x="900" y="330" font-family="Inter, PingFang SC, Noto Sans SC, system-ui, sans-serif" font-size="110" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="2">SVG Architect</text>
+
+  <!-- 副标题 -->
+  <text x="900" y="400" font-size="46" fill="#94A3B8" text-anchor="middle">纯代码 · 七种风格 · 一键生成</text>
+
+  <!-- 底部标签 -->
+  <text x="900" y="480" font-size="18" fill="#94A3B8" text-anchor="middle">WeChat Cover · Article · Doc Figure</text>
+
+  <!-- 底部强调线 -->
+  <rect x="780" y="520" width="240" height="1" fill="#3B82F6" opacity="0.6"/>
+</svg>

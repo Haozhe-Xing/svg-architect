@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="svga-bento-title svga-bento-desc" font-family="PingFang SC, Noto Sans SC, Microsoft YaHei, system-ui, sans-serif">
+  <title id="svga-bento-title">七种风格全景</title>
+  <desc id="svga-bento-desc">SVG Architect 七种输出风格一览：科技暗黑、极简清朗、玻璃高级感、新粗野主义、信息格栅、粘土软萌、中文信息密集。</desc>
+
+  <rect x="0" y="0" width="1200" height="500" fill="#111418"/>
+
+  <!-- 全局标题 -->
+  <text x="80" y="88" font-size="48" font-weight="700" fill="#F1F5F9">七种风格 · 一键匹配</text>
+
+  <!-- 行1（4格） -->
+  <rect x="80" y="118" width="251" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="96" y="152" font-size="24" font-weight="600" fill="#F1F5F9">tech_dark</text>
+  <text x="96" y="182" font-size="20" fill="#94A3B8">科技暗黑</text>
+  <text x="96" y="210" font-size="16" fill="#94A3B8">技术 · AI · 架构</text>
+
+  <rect x="343" y="118" width="251" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="359" y="152" font-size="24" font-weight="600" fill="#F1F5F9">minimal_clean</text>
+  <text x="359" y="182" font-size="20" fill="#94A3B8">极简清朗</text>
+  <text x="359" y="210" font-size="16" fill="#94A3B8">品牌 · 概念 · 清爽</text>
+
+  <rect x="606" y="118" width="251" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="622" y="152" font-size="24" font-weight="600" fill="#F1F5F9">glass_premium</text>
+  <text x="622" y="182" font-size="20" fill="#94A3B8">玻璃高级感</text>
+  <text x="622" y="210" font-size="16" fill="#94A3B8">高端 · 质感 · SaaS</text>
+
+  <rect x="869" y="118" width="251" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="885" y="152" font-size="24" font-weight="600" fill="#F1F5F9">neubrutalism</text>
+  <text x="885" y="182" font-size="20" fill="#94A3B8">新粗野主义</text>
+  <text x="885" y="210" font-size="16" fill="#94A3B8">冲击 · 醒目 · 活动</text>
+
+  <!-- 行2（3格） -->
+  <rect x="80" y="270" width="338" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="96" y="304" font-size="24" font-weight="600" fill="#F1F5F9">bento_info</text>
+  <text x="96" y="334" font-size="20" fill="#94A3B8">信息格栅</text>
+  <text x="96" y="362" font-size="16" fill="#94A3B8">多要素 · 全景 · 对比</text>
+
+  <rect x="430" y="270" width="338" height="140" rx="12" fill="#1A1D24" stroke="#2A2D35" stroke-width="1"/>
+  <text x="446" y="304" font-size="24" font-weight="600" fill="#F1F5F9">clay_soft</text>
+  <text x="446" y="334" font-size="20" fill="#94A3B8">粘土软萌</text>
+  <text x="446" y="362" font-size="16" fill="#94A3B8">教育 · 轻松 · 可爱</text>
+
+  <!-- zh_dense（新增，强调绿） -->
+  <rect x="780" y="270" width="338" height="140" rx="12" fill="#10B981" stroke="#10B981" stroke-width="1"/>
+  <text x="796" y="304" font-size="24" font-weight="700" fill="#FFFFFF">zh_dense</text>
+  <text x="982" y="304" font-size="16" font-weight="600" fill="#FFFFFF">新增</text>
+  <text x="796" y="336" font-size="20" font-weight="600" fill="#FFFFFF">中文信息密集</text>
+  <text x="796" y="364" font-size="16" fill="#D1FAE5">文档插图 · mdBook · 推导</text>
+
+  <!-- 底部说明 -->
+  <text x="80" y="452" font-size="16" fill="#94A3B8">zh_dense 为本次新增风格，搭配 doc_figure 平台（680px 宽、12px 字号下限）</text>
+</svg>
