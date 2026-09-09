@@ -74,6 +74,24 @@
 
 ---
 
+## 示例图（Sample）
+
+以下为各平台/风格的代表性示例，由本项目自身脚本渲染（`scripts/render_svg_preview.py`）并全部通过校验器。
+
+### 文档插图 · `doc_figure` + `zh_dense`
+
+| 平台与字号对比 | 生成流程 | 对比度校验原理 |
+|----------------|----------|----------------|
+| ![平台与字号对比](examples/zh_dense_platform_compare.png) | ![生成流程](examples/zh_dense_workflow.png) | ![对比度校验原理](examples/zh_dense_derivation.png) |
+
+### 公众号 · `wechat_cover` / `wechat_article`
+
+| 封面（`tech_dark`） | 七种风格全景（`bento_info`） |
+|---------------------|------------------------------|
+| ![科技暗黑封面](examples/tech_dark_cover.png) | ![七种风格全景](examples/bento_info_styles.png) |
+
+---
+
 ## 目录结构
 
 ```
