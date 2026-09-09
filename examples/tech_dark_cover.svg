@@ -25,7 +25,7 @@
   <text x="900" y="330" font-family="Inter, PingFang SC, Noto Sans SC, system-ui, sans-serif" font-size="110" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="2">SVG Architect</text>
 
   <!-- 副标题 -->
-  <text x="900" y="400" font-size="46" fill="#94A3B8" text-anchor="middle">纯代码 · 七种风格 · 一键生成</text>
+<text x="900" y="400" font-size="46" fill="#94A3B8" text-anchor="middle">纯代码 · 八种风格 · 一键生成</text>
 
   <!-- 底部标签 -->
   <text x="900" y="480" font-size="18" fill="#94A3B8" text-anchor="middle">WeChat Cover · Article · Doc Figure</text>

@@ -7,14 +7,15 @@ description: >
   "配图"、"插图"、"架构图"、"流程图"、"示意图"、"时序图"、"设计海报"、"出一张图"等请求。
   Also handles dense documentation figures (mdBook/博客插图, 680px wide) via the
   zh_dense style. Generate pure-code SVG files sized for WeChat (cover 1800x766,
-  article image 1200x500) or docs (680xH) in one of seven styles: tech_dark
+  article image 1200x500) or docs (680xH) in one of eight styles: tech_dark
   (科技暗黑), minimal_clean (极简清朗), glass_premium (玻璃高级感), neubrutalism
-  (新粗野主义), bento_info (信息格栅), clay_soft (粘土软萌), zh_dense (中文信息密集).
+  (新粗野主义), bento_info (信息格栅), clay_soft (粘土软萌), zh_dense (中文信息密集),
+  clean_teaching (干净教学风).
   Do not use for photorealistic bitmap generation, general image editing, UI
   screens, or non-WeChat deliverables unless the user explicitly asks for an SVG.
 compatibility: "Agent Skills compatible"
 metadata:
-  version: "0.16"
+  version: "0.17"
   author: donglinzhao
 ---
 
@@ -43,6 +44,7 @@ Load only the files needed for the current task:
   - `bento_info` → `references/specs/bento_info.md`
   - `clay_soft` → `references/specs/clay_soft.md`
   - `zh_dense` → `references/specs/zh_dense.md`
+  - `clean_teaching` → `references/specs/clean_teaching.md`
 - Read `references/layout_plan.schema.json` when saving a layout plan or running strict geometry checks.
 - Read `references/prompt_template.md` when the layout is complex or the plan shape is unclear.
 - Read `references/fonts_whitelist.json` before choosing final font stacks.
@@ -57,9 +59,9 @@ Map the user request to a platform profile:
 
 - `wechat_cover` (1800x766): 封面、封面图、头图.
 - `wechat_article` (1200x500): 配图、插图、文章图、架构图、流程图、示意图、时序图、海报.
-- `doc_figure` (680xH, height 400–1000 elastic): 文档插图、mdBook 插图、博客插图、教材插图、原理图、推导图 — pair with the `zh_dense` style.
+- `doc_figure` (680xH, height 400–1000 elastic): 文档插图、mdBook 插图、博客插图、教材插图、原理图、推导图 — pair with `zh_dense` or `clean_teaching`.
 
-If the request is ambiguous, use `wechat_article` and continue. For documentation/course/blog contexts (mdBook, 教材, 讲义, 博客配图), use `doc_figure` + `zh_dense`.
+If the request is ambiguous, use `wechat_article` and continue. For documentation/course/blog contexts (mdBook, 教材, 讲义, 博客配图), use `doc_figure` + `zh_dense`; for clean course-style model/architecture explanations, use `doc_figure` + `clean_teaching`.
 
 ### 2. Choose Style
 
@@ -74,6 +76,7 @@ Infer a style when the user does not specify one. Map the request keywords to th
 | `bento_info` | 信息格栅 | 信息密集、多要素、全景图、功能对比、格栅、架构全景 |
 | `clay_soft` | 粘土软萌 | 教育、软萌、轻松、亲子、健康、生活方式、非技术、可爱 |
 | `zh_dense` | 中文信息密集 | 文档插图、mdBook、教材、讲义、博客、原理图、推导、对比表、信息密集、结论先行 |
+| `clean_teaching` | 干净教学风 | 教学图、课程讲义、模型结构、Transformer、机制解释、干净、卡片、浅色、柔和 |
 
 Default fallback rules when keywords are ambiguous:
 - Technical content → `tech_dark`
@@ -81,6 +84,7 @@ Default fallback rules when keywords are ambiguous:
 - Light / non-technical topics → `clay_soft`
 - Clean product/brand content → `minimal_clean`
 - Documentation / course / blog figures with dense content → `zh_dense` on `doc_figure`
+- Clean teaching diagrams for model structure / architecture explanation → `clean_teaching` on `doc_figure`
 
 State the inferred style briefly and proceed.
 
@@ -206,4 +210,5 @@ Do not claim validation passed unless the script was run and returned success.
 - Style fallback: when style is ambiguous, prefer `tech_dark` for technical topics, `bento_info` for information-dense multi-element diagrams, `clay_soft` for non-technical/light topics, `minimal_clean` for brand/product.
 - `neubrutalism` hard shadows must be implemented as offset duplicate `<rect>` elements, NOT `drop-shadow` filter (filter produces soft edges which breaks the style).
 - `zh_dense` figures are 680 wide with elastic height; the validator identifies `doc_figure` by width only and applies a 12px font floor. All text must be dark colors — the contrast check compares text fill against the canvas background `#F8FAFC`, so white/light text fails even when it sits on a colored chip.
+- `clean_teaching` is for clean course-style technical explanation diagrams: soft cards, shallow tint regions, visible main flow, side notes, and optional dashed residual/skip connections.
 - `render_svg_preview.py --platform doc_figure` derives expected height from the SVG's own viewBox; thumbnail crop is the horizontal center 50%.

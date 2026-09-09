@@ -8,7 +8,7 @@
 
 ## ✨ 本次新增：`zh_dense` 风格 + `doc_figure` 平台
 
-这是本版本的核心更新：在原有的 6 种公众号视觉风格之外，新增了面向**技术文档插图**的第七种风格 `zh_dense`（中文信息密集），并配套新增 `doc_figure` 平台规格。
+文档插图能力是近期核心更新：在原有的 6 种公众号视觉风格之外，新增了面向**技术文档插图**的 `zh_dense`（中文信息密集），并配套新增 `doc_figure` 平台规格。本次进一步补充第八种风格 `clean_teaching`（干净教学风），用于 Transformer / LLM / 架构机制这类浅色卡片式讲解图。
 
 ### 为什么新增
 
@@ -56,11 +56,11 @@
 |----------|----------|---------|
 | `wechat_cover` | 公众号封面图、头图 | 1800 × 766 |
 | `wechat_article` | 公众号配图、插图、架构图、流程图、示意图、时序图、海报 | 1200 × 500 |
-| `doc_figure` | 技术文档 / mdBook / 博客内嵌插图（`zh_dense` 风格专用） | 680 × (400–1000 弹性) |
+| `doc_figure` | 技术文档 / mdBook / 博客内嵌插图（适配 `zh_dense` / `clean_teaching`） | 680 × (400–1000 弹性) |
 
 ---
 
-## 七种风格
+## 八种风格
 
 | Style ID | 中文名 | 触发关键词 |
 |----------|--------|-----------|
@@ -70,7 +70,8 @@
 | `neubrutalism` | 新粗野主义 | 冲击、醒目、大字、粗野、Z 世代、活动、宣传 |
 | `bento_info` | 信息格栅 | 信息密集、多要素、全景图、功能对比、格栅、架构全景 |
 | `clay_soft` | 粘土软萌 | 教育、软萌、轻松、亲子、健康、生活方式、可爱 |
-| `zh_dense` | 中文信息密集 | 文档插图、mdBook、教材、讲义、博客、原理图、推导、对比表（**新增**） |
+| `zh_dense` | 中文信息密集 | 文档插图、mdBook、教材、讲义、博客、原理图、推导、对比表 |
+| `clean_teaching` | 干净教学风 | 教学图、课程讲义、模型结构、Transformer、机制解释、浅色卡片（**新增**） |
 
 ---
 
@@ -78,17 +79,21 @@
 
 以下为各平台/风格的代表性示例，由本项目自身脚本渲染（`scripts/render_svg_preview.py`）并全部通过校验器。
 
-### 文档插图 · `doc_figure` + `zh_dense`
+### 文档插图 · `doc_figure`
 
-| 平台与字号对比 | 生成流程 | 对比度校验原理 |
-|----------------|----------|----------------|
+| 平台与字号对比（`zh_dense`） | 生成流程（`zh_dense`） | 对比度校验原理（`zh_dense`） |
+|------------------------------|----------------------|------------------------------|
 | ![平台与字号对比](examples/zh_dense_platform_compare.png) | ![生成流程](examples/zh_dense_workflow.png) | ![对比度校验原理](examples/zh_dense_derivation.png) |
+
+| Transformer 层结构（`clean_teaching`） |
+|----------------------------------------|
+| ![Transformer 层结构教学图](examples/clean_teaching_transformer.png) |
 
 ### 公众号 · `wechat_cover` / `wechat_article`
 
-| 封面（`tech_dark`） | 七种风格全景（`bento_info`） |
+| 封面（`tech_dark`） | 八种风格全景（`bento_info`） |
 |---------------------|------------------------------|
-| ![科技暗黑封面](examples/tech_dark_cover.png) | ![七种风格全景](examples/bento_info_styles.png) |
+| ![科技暗黑封面](examples/tech_dark_cover.png) | ![八种风格全景](examples/bento_info_styles.png) |
 
 ---
 
@@ -106,14 +111,15 @@
 │   ├── fonts_whitelist.json         # 字体白名单
 │   ├── error_codes.md               # 错误码与退出码
 │   ├── quality_checklist.md         # 交付质检清单
-│   └── specs/                       # 七种风格规范
+│   └── specs/                       # 八种风格规范
 │       ├── tech_dark.md
 │       ├── minimal_clean.md
 │       ├── glass_premium.md
 │       ├── neubrutalism.md
 │       ├── bento_info.md
 │       ├── clay_soft.md
-│       └── zh_dense.md              # 新增
+│       ├── zh_dense.md
+│       └── clean_teaching.md        # 新增
 └── scripts/
     ├── run_pipeline.py              # 全流程管道
     ├── svg_validator.py             # 校验器（含 doc_figure）
@@ -138,7 +144,7 @@ playwright install chromium
 ## 工作流概览
 
 1. **识别输出类型**：映射到 `wechat_cover` / `wechat_article` / `doc_figure`。
-2. **选择风格**：无指定时按关键词推断；文档/课程/博客密集内容 → `doc_figure` + `zh_dense`。
+2. **选择风格**：无指定时按关键词推断；文档/课程/博客密集内容 → `doc_figure` + `zh_dense`；干净课程/模型结构讲解 → `doc_figure` + `clean_teaching`。
 3. **规划布局**：生成 `<slug>.layout.json` 布局计划。
 4. **生成 SVG**：完整文件，含 `<title>`/`<desc>`、`svga-` ID 前缀、安全区约束。
 5. **校验与修复**：
@@ -152,4 +158,4 @@ playwright install chromium
 
 ## 版本
 
-当前 `metadata.version` 为 **0.16**，本次在此基础上新增 `zh_dense` 风格与 `doc_figure` 平台能力。
+当前 `metadata.version` 为 **0.17**，本次在 `zh_dense` / `doc_figure` 基础上新增 `clean_teaching`（干净教学风）样式能力。
